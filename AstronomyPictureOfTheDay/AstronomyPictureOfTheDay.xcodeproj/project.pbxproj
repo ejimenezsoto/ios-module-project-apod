@@ -21,6 +21,8 @@
 		799D116924CA2C3100B8F72A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D116824CA2C3100B8F72A /* NetworkError.swift */; };
 		799D116B24CA2C4900B8F72A /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D116A24CA2C4900B8F72A /* PhotoController.swift */; };
 		799D116E24CA2C6300B8F72A /* EJSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 799D116D24CA2C6300B8F72A /* EJSPhoto.m */; };
+		799D117024CA2CDD00B8F72A /* Design in Resources */ = {isa = PBXBuildFile; fileRef = 799D116F24CA2CDC00B8F72A /* Design */; };
+		799D117224CA2CE600B8F72A /* LambdaSDK in Resources */ = {isa = PBXBuildFile; fileRef = 799D117124CA2CE600B8F72A /* LambdaSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		799D116A24CA2C4900B8F72A /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		799D116C24CA2C6300B8F72A /* EJSPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJSPhoto.h; sourceTree = "<group>"; };
 		799D116D24CA2C6300B8F72A /* EJSPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJSPhoto.m; sourceTree = "<group>"; };
+		799D116F24CA2CDC00B8F72A /* Design */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Design; sourceTree = "<group>"; };
+		799D117124CA2CE600B8F72A /* LambdaSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LambdaSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				799D113824CA2A8800B8F72A /* AstronomyPictureOfTheDay */,
+				799D117124CA2CE600B8F72A /* LambdaSDK */,
+				799D116F24CA2CDC00B8F72A /* Design */,
 				799D113724CA2A8800B8F72A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -221,9 +227,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799D117024CA2CDD00B8F72A /* Design in Resources */,
 				799D114924CA2A8C00B8F72A /* LaunchScreen.storyboard in Resources */,
 				799D114624CA2A8C00B8F72A /* Assets.xcassets in Resources */,
 				799D114424CA2A8800B8F72A /* Main.storyboard in Resources */,
+				799D117224CA2CE600B8F72A /* LambdaSDK in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
