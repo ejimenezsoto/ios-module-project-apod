@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EJSPhoto : NSObject
 
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *explanation;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSURL *url;
+
+- (instancetype)initWithTitle:(NSString *)title explanation:(NSString *)explanation date:(NSDate *)date url:(NSURL *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END

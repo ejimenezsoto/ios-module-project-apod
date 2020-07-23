@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mE3-3a-EoJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photos View Controller-->
         <scene sceneID="GyT-LH-84P">
             <objects>
-                <viewController id="mxx-uo-3pR" sceneMemberID="viewController">
+                <viewController id="mxx-uo-3pR" customClass="PhotosViewController" customModule="AstronomyPictureOfTheDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lir-W3-gQ8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,25 +26,41 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="qOv-ae-2cf">
-                                        <rect key="frame" x="0.0" y="0.0" width="188" height="173"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="qOv-ae-2cf" customClass="PhotoCollectionViewCell" customModule="AstronomyPictureOfTheDay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LBM-RY-wOj">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="173"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-KE-oGp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="173"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="971-xJ-Qpz"/>
+                                                        <constraint firstAttribute="height" constant="200" id="fS3-0j-ZHk"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5z-sa-LFi">
+                                                    <rect key="frame" x="10" y="8" width="180" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="5" height="5"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="eKu-KE-oGp" secondAttribute="trailing" id="6ld-UD-w1U"/>
                                                 <constraint firstItem="eKu-KE-oGp" firstAttribute="top" secondItem="LBM-RY-wOj" secondAttribute="top" id="PIa-lZ-EV3"/>
+                                                <constraint firstItem="q5z-sa-LFi" firstAttribute="top" secondItem="LBM-RY-wOj" secondAttribute="top" constant="8" id="WYx-QO-CJT"/>
                                                 <constraint firstAttribute="bottom" secondItem="eKu-KE-oGp" secondAttribute="bottom" id="Xcz-sv-yJJ"/>
                                                 <constraint firstItem="eKu-KE-oGp" firstAttribute="leading" secondItem="LBM-RY-wOj" secondAttribute="leading" id="fO1-t7-eWo"/>
+                                                <constraint firstItem="q5z-sa-LFi" firstAttribute="leading" secondItem="LBM-RY-wOj" secondAttribute="leading" constant="10" id="j3P-fR-0XK"/>
+                                                <constraint firstAttribute="trailing" secondItem="q5z-sa-LFi" secondAttribute="trailing" constant="10" id="l6n-AN-mz4"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="q5z-sa-LFi" id="SQl-C5-VvQ"/>
+                                            <outlet property="imageView" destination="eKu-KE-oGp" id="5Nd-xo-HGb"/>
                                             <segue destination="Rmu-Cf-KB9" kind="show" identifier="ShowImageDetailSegue" id="dUC-JJ-7Hl"/>
                                         </connections>
                                     </collectionViewCell>
@@ -62,6 +78,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Emm-Zk-vrr"/>
                     <connections>
+                        <outlet property="collectionView" destination="OUl-Ob-Ly6" id="X84-Dx-wsU"/>
                         <segue destination="xv7-h7-SFH" kind="presentation" identifier="OnboardingModalSeuge" id="6Tx-O6-3ha"/>
                     </connections>
                 </viewController>
@@ -69,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1312" y="193"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="zVC-j6-2LD">
             <objects>
-                <viewController id="xv7-h7-SFH" sceneMemberID="viewController">
+                <viewController id="xv7-h7-SFH" customClass="OnboardingViewController" customModule="AstronomyPictureOfTheDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oul-d3-9o3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +113,9 @@
                                 <state key="normal" title="Check it out!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="xv7-h7-SFH" eventType="touchUpInside" id="zbe-AJ-Trm"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-hj-Tar">
                                 <rect key="frame" x="40" y="552.5" width="334" height="97"/>
@@ -134,15 +154,18 @@ Picture of the Day</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C0P-04-8Do"/>
                     </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="P1B-nJ-Kfd" id="pL3-XP-dm3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="618-cZ-Rwz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1312" y="913"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="iRW-5g-flk">
             <objects>
-                <viewController id="Rmu-Cf-KB9" sceneMemberID="viewController">
+                <viewController id="Rmu-Cf-KB9" customClass="PhotoDetailViewController" customModule="AstronomyPictureOfTheDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VKG-Fq-KGB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +178,7 @@ Picture of the Day</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="info.circle.fill" catalog="system"/>
                                 <connections>
+                                    <action selector="infoButtonTapped:" destination="Rmu-Cf-KB9" eventType="touchUpInside" id="WPL-g7-vGg"/>
                                     <segue destination="fCi-CG-0QR" kind="presentation" identifier="ShowImageInfoSegue" id="0r7-2a-lbu"/>
                                 </connections>
                             </button>
@@ -169,15 +193,19 @@ Picture of the Day</string>
                         <viewLayoutGuide key="safeArea" id="YWJ-R6-ula"/>
                     </view>
                     <navigationItem key="navigationItem" id="dwI-HU-PGK"/>
+                    <connections>
+                        <outlet property="imageView" destination="iXj-4x-oGJ" id="jBV-sv-Iy1"/>
+                        <outlet property="infoButton" destination="dJs-o9-e00" id="9zb-4A-9MQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w40-p0-fEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2210" y="193"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Info View Controller-->
         <scene sceneID="pe3-U2-6JO">
             <objects>
-                <viewController id="fCi-CG-0QR" sceneMemberID="viewController">
+                <viewController id="fCi-CG-0QR" customClass="PhotoInfoViewController" customModule="AstronomyPictureOfTheDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FyJ-YH-UAp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,20 +216,35 @@ Picture of the Day</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Typ-NT-m3l">
+                                <rect key="frame" x="20" y="94" width="374" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Typ-NT-m3l" firstAttribute="top" secondItem="yXQ-AO-rC9" secondAttribute="bottom" constant="50" id="Fvh-4A-uCM"/>
                             <constraint firstItem="yXQ-AO-rC9" firstAttribute="leading" secondItem="NEO-Ly-OyW" secondAttribute="leading" constant="20" id="VRc-f2-mjj"/>
+                            <constraint firstItem="Typ-NT-m3l" firstAttribute="leading" secondItem="NEO-Ly-OyW" secondAttribute="leading" constant="20" id="dd9-3A-xhI"/>
+                            <constraint firstItem="NEO-Ly-OyW" firstAttribute="trailing" secondItem="Typ-NT-m3l" secondAttribute="trailing" constant="20" id="qOD-S0-XQg"/>
                             <constraint firstItem="yXQ-AO-rC9" firstAttribute="top" secondItem="NEO-Ly-OyW" secondAttribute="top" constant="20" id="vbs-8T-UfN"/>
                             <constraint firstItem="NEO-Ly-OyW" firstAttribute="trailing" secondItem="yXQ-AO-rC9" secondAttribute="trailing" constant="20" id="wuo-vP-pMa"/>
+                            <constraint firstItem="Typ-NT-m3l" firstAttribute="bottom" secondItem="NEO-Ly-OyW" secondAttribute="bottom" id="zOv-f9-qqe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NEO-Ly-OyW"/>
                     </view>
                     <navigationItem key="navigationItem" id="CVs-U4-xyN"/>
+                    <connections>
+                        <outlet property="infoTextView" destination="Typ-NT-m3l" id="F7S-H8-igp"/>
+                        <outlet property="titleLabel" destination="yXQ-AO-rC9" id="Hla-o4-R7J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBw-C2-38t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3122" y="193"/>
+            <point key="canvasLocation" x="3121.739130434783" y="192.85714285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BDC-O4-sLT">

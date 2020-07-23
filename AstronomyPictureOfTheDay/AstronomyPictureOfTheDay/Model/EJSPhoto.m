@@ -10,4 +10,17 @@
 
 @implementation EJSPhoto
 
+- (instancetype)initWithTitle:(NSString *)title explanation:(NSString *)explanation date:(NSDate *)date url:(NSURL *)url
+{
+    self = [super init];
+    if (self) {
+        
+        _title = title;
+        _explanation = explanation;
+        _date = date;
+        _url = url;
+    }
+    
+    return self;
+}
 @end

@@ -144,7 +144,6 @@
 		799D115724CA2B5700B8F72A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				799D115D24CA2BB600B8F72A /* AstronomyPictureOfTheDay-Bridging-Header.h */,
 				799D116824CA2C3100B8F72A /* NetworkError.swift */,
 			);
 			path = Helpers;
@@ -164,6 +163,7 @@
 		799D115924CA2B7100B8F72A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				799D115D24CA2BB600B8F72A /* AstronomyPictureOfTheDay-Bridging-Header.h */,
 				799D115E24CA2BB600B8F72A /* PhotoCollectionViewCell.swift */,
 			);
 			path = View;
